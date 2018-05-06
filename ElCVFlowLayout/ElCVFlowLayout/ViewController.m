@@ -31,9 +31,12 @@
     //横向滚动
     ELCVFlowLayout *horizontalLayout = [[ELCVFlowLayout alloc] init];
 
-    horizontalLayout.itemSize = CGSizeMake(kScreenWidth/3.0, kScreenWidth/4.0);
+//    horizontalLayout.itemSize = CGSizeMake(kScreenWidth/3.0, kScreenWidth/4.0);
+       horizontalLayout.itemSize = CGSizeMake(kScreenWidth/3.0, kScreenWidth/3.0);
 
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, kScreenWidth) collectionViewLayout:horizontalLayout];
+//    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, kScreenWidth) collectionViewLayout:horizontalLayout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, kScreenWidth/3.0) collectionViewLayout:horizontalLayout];
+    
     _collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     _collectionView.pagingEnabled = YES;
     _collectionView.dataSource = self;
@@ -51,22 +54,26 @@
 #pragma mark 数据源方法
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView
 {
-    return 4;
+//    return 4;
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 9;
-    }
-    else if (section == 1) {
-        return 17;
-    }
-    else if (section == 2) {
-        return 25;
-    }
-    return 1;
+//    if (section == 0) {
+//        return 9;
+//    }
+//    else if (section == 1) {
+//        return 17;
+//    }
+//    else if (section == 2) {
+//        return 25;
+//    }
+//    return 1;
     
+    
+//    return 3;
+     return 12;
 }
 
 - (UICollectionViewCell*)collectionView:(UICollectionView*)collectionView cellForItemAtIndexPath:(NSIndexPath*)indexPath
